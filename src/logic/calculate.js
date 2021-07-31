@@ -78,7 +78,7 @@ const calculate = (data, btnName) => {
       };
     case 'AC':
       return {
-        total: 0,
+        total: '0',
         next: null,
         operation: null,
       };
