@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      total: '0',
+      total: null,
       next: null,
       // eslint-disable-next-line
       operation: null,
@@ -24,7 +24,7 @@ class App extends React.Component {
     const { next, total } = this.state;
     return (
       <>
-        <Display result={next || total} />
+        <Display result={next || total || '0'} />
         <ButtonPanel clickHandler={this.handleClick} />
       </>
     );
