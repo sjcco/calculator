@@ -6,29 +6,79 @@ const calculate = (data, btnName) => {
     next,
     operation,
   } = data;
-
+  let value;
   switch (btnName) {
-    case '+/-':
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+
+      if (next) {
+        if (next === '0') {
+          value = btnName;
+        } else {
+          value = next + btnName;
+        }
+      } else {
+        value = btnName;
+      }
       return {
-        total: operate(Number(total), Number(next), operation),
-        next: String(total),
+        total: total || '0',
+        next: value,
+        operation,
+      };
+
+    case '.':
+      if (next) {
+        if (next.includes('.')) {
+          value = next;
+        } else {
+          value = `${next}.`;
+        }
+      } else {
+        value = '0.';
+      }
+      return {
+        total,
+        next: value,
+        operation,
+      };
+    case '+/-':
+      // eslint-disable-next-line
+      console.log('here')
+      return {
+        total,
+        next: String(operate(Number(next), Number(total), '+/-')),
         operation,
       };
     case '%':
       return {
-        total: operate(Number(total), Number(next), operation),
-        next: String(total),
-        operation: null,
+        total,
+        next: String(operate(Number(next), Number(total), '%')),
+        operation,
       };
     case '=':
+      if (operation) {
+        return {
+          total: next,
+          next: String(operate(Number(total), Number(next), operation)),
+          operation: null,
+        };
+      }
       return {
-        total: operate(Number(total), Number(next), operation),
-        next: String(total),
+        total: next,
+        next,
         operation: null,
       };
     case 'AC':
       return {
-        total: 0,
+        total: '0',
         next: null,
         operation: null,
       };
@@ -38,14 +88,14 @@ const calculate = (data, btnName) => {
     case '-':
       if (operation) {
         return {
-          total: operate(Number(total), Number(next), operation),
-          next: String(total),
+          total: String(operate(Number(total), Number(next), operation)),
+          next: null,
           operation: btnName,
         };
       }
       return {
-        total,
-        next,
+        total: next,
+        next: null,
         operation: btnName,
       };
 
