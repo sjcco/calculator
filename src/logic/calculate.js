@@ -83,7 +83,7 @@ const calculate = (data, btnName) => {
         operation: null,
       };
     case '÷':
-    case 'X':
+    case 'x':
     case '+':
     case '-':
       if (operation) {

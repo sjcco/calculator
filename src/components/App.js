@@ -18,12 +18,12 @@ const App = () => {
     setMemory(prevState => calculate(prevState, btnName));
   };
 
-  const { next, total } = memory;
+  const { next, total, operation } = memory;
   return (
-    <>
-      <Display result={next || total || '0'} />
+    <div className="app skin">
+      <Display result={next || total || '0'} operation={'' || operation} />
       <ButtonPanel clickHandler={handleClick} />
-    </>
+    </div>
   );
 };
 

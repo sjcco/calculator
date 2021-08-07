@@ -11,7 +11,7 @@ const operate = (numberOne, numberTwo, operation) => {
       return operand1.plus(operand2);
     case '-':
       return operand1.minus(operand2);
-    case 'X':
+    case 'x':
       return operand1.times(operand2);
     case '÷':
       return operand1.div(operand2);
