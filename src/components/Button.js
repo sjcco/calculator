@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types';
 
 const Button = props => {
-  const { name, btnType, clickHandler } = props;
+  const {
+    name,
+    btnColor,
+    clickHandler,
+    wide,
+  } = props;
   return (
     <>
-      <button type="button" className={btnType} onClick={() => clickHandler(name)}>
+      <button type="button" className={wide ? `button ${btnColor} zero` : `button ${btnColor}`} onClick={() => clickHandler(name)}>
         { name }
       </button>
     </>
@@ -13,12 +18,9 @@ const Button = props => {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  btnType: PropTypes.string,
+  btnColor: PropTypes.string.isRequired,
   clickHandler: PropTypes.func.isRequired,
-};
-
-Button.defaultProps = {
-  btnType: 'number',
+  wide: PropTypes.bool.isRequired,
 };
 
 export default Button;
