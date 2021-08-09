@@ -12,7 +12,61 @@
   width: 100%;
 }
 
-.app {
+.nav-wrapper {
+  background-color: black;
+}
+
+.nav-wrapper a {
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.brand {
+  text-align: center;
+  font-weight: bold;
+  line-height: 63px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-right: 1.5rem;
+  padding: 5px 0;
+}
+
+.nav-links a {
+  padding: 0 0.5rem;
+}
+
+.nav-links li:hover {
+  text-decoration: underline;
+}
+
+.active {
+  background-color: #0089a6;
+  border-radius: 16px;
+}
+
+.content-container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.calc-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calculator {
   max-width: 700px;
 }
 
