@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Element renders correctly 1`] = `
+<button
+  className="button bg-gray"
+  onClick={[Function]}
+  type="button"
+>
+  7
+</button>
+`;

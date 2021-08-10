@@ -50,8 +50,6 @@ const calculate = (data, btnName) => {
         operation,
       };
     case '+/-':
-      // eslint-disable-next-line
-      console.log('here')
       return {
         total,
         next: String(operate(Number(next), Number(total), '+/-')),
